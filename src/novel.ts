@@ -21,6 +21,12 @@ const len2Codes = new Set([
   247
 ]);
 
+export function unicodeConvert(str: string): string {
+  return str.replace(/&#([0-9]+);/gim, (_, p1) => {
+    return String.fromCharCode(parseInt(p1));
+  });
+}
+
 export function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
 }
@@ -126,7 +132,9 @@ export class Novel {
     this.charsPerPage = charsPerPage;
     try {
       this.pages = [];
-      const lines = fs.readFileSync(filePath, 'utf8').split('\n').map(line => splitString(line.trim(), charsPerPage));
+      const lines = fs.readFileSync(filePath, 'utf8')
+        .split('\n')
+        .map(line => splitString(unicodeConvert(line).trim(), charsPerPage));
       for (const arr of lines) {
         for (const str of arr) {
           this.pages.push(str);
