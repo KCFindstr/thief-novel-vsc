@@ -1,13 +1,13 @@
 {
   "name": "thief-novel",
-	"publisher": "KCFindstr",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/KCFindstr/thief-novel-vsc.git"
-	},
+  "publisher": "KCFindstr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KCFindstr/thief-novel-vsc.git"
+  },
   "displayName": "Thief-Novel",
   "description": "Read novels in vscode status bar.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.66.0"
   },
