@@ -1,5 +1,6 @@
 {
   "name": "thief-novel",
+	"publisher": "KCFindstr",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/KCFindstr/thief-novel-vsc.git"
