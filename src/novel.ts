@@ -170,9 +170,7 @@ export class Novel {
       vscode.window.showWarningMessage(`Page number out of range [1, ${this.pages.length}]`);
       return;
     }
-    if (value !== NaN && value >= 0 && value < this.pages.length) {
-      this.updatePage(value);
-    }
+    this.updatePage(value);
   }
 
   public hideNovel() {
