@@ -1,0 +1,120 @@
+{
+  "name": "thief-novel",
+  "displayName": "Thief-Novel",
+  "description": "Read novels in vscode status bar.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:thief-novel.showNovel"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Thief Novel",
+      "properties": {
+        "thief-novel.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable novel in status bar."
+        },
+        "thief-novel.novelPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to novel."
+        },
+        "thief-novel.page": {
+          "type": "number",
+          "default": 0,
+          "description": "Current page number."
+        },
+        "thief-novel.charsPerPage": {
+          "type": "number",
+          "default": 50,
+          "description": "Number of characters per page."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "thief-novel.hideNovel",
+        "title": "Novel: Hide status bar novel"
+      },
+      {
+        "command": "thief-novel.showNovel",
+        "title": "Novel: Show status bar novel"
+      },
+      {
+        "command": "thief-novel.reloadNovel",
+        "title": "Novel: Reload status bar novel"
+      },
+      {
+        "command": "thief-novel.prevPage",
+        "title": "Novel: Go to previous page"
+      },
+      {
+        "command": "thief-novel.nextPage",
+        "title": "Novel: Go to next page"
+      },
+      {
+        "command": "thief-novel.jumpPage",
+        "title": "Novel: Jump to page"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "thief-novel.prevPage",
+        "key": "ctrl+alt+,",
+        "mac": "cmd+,",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "thief-novel.nextPage",
+        "key": "ctrl+alt+.",
+        "mac": "cmd+.",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "thief-novel.jumpPage",
+        "key": "ctrl+alt+;",
+        "mac": "cmd+;",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "thief-novel.hideNovel",
+        "key": "ctrl+m",
+        "mac": "cmd+m"
+      },
+      {
+        "command": "thief-novel.showNovel",
+        "key": "ctrl+alt+m",
+        "mac": "shift+cmd+m"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.66.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "14.x",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.2.2",
+    "typescript": "^4.5.5",
+    "@vscode/test-electron": "^2.1.3"
+  }
+}
