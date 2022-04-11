@@ -25,6 +25,10 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 0.2.1
+
+Minor bug fix.
+
 ### 0.2.0
 
 Add html unicode convert support (converts strings like `&#1234;` to the unicode character).

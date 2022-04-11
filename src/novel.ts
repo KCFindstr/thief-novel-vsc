@@ -166,7 +166,7 @@ export class Novel {
     const query = await vscode.window.showInputBox({
       placeHolder: 'Page number',
       prompt: `Jump to page (Total: ${this.pages.length}):`,
-      value: this.configPage.toString()
+      value: (this.configPage + 1).toString()
     });
     let value = parseInt(query!);
     if (value === NaN) {
