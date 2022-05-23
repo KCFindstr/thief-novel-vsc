@@ -74,6 +74,7 @@ export class Novel {
   private currentMsg?: vscode.Disposable;
   private pages: string[] = [];
   private enabled: boolean;
+  private updatingPage: Thenable<void> = Promise.resolve();
 
   public get configEnable() {
     return vscode.workspace.getConfiguration('thief-novel').get('enable') as boolean;
@@ -96,7 +97,13 @@ export class Novel {
   }
 
   public set configPage(value: number) {
-    vscode.workspace.getConfiguration().update('thief-novel.page', value, true);
+    const currentPromise = this.updatingPage;
+    this.updatingPage = new Promise((resolve) => {
+      currentPromise.then(() => {
+        vscode.workspace.getConfiguration().update('thief-novel.page', value, true);
+        resolve();
+      });
+    });
   }
 
   public get configCharsPerPage() {

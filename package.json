@@ -39,7 +39,7 @@
         },
         "thief-novel.charsPerPage": {
           "type": "number",
-          "default": 50,
+          "default": 80,
           "description": "Number of characters per page."
         }
       }

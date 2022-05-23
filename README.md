@@ -6,6 +6,10 @@ This VSCode extension is inspired by [Thief-Book](https://marketplace.visualstud
 
 Read novels in visual studio code status bar.
 
+## Getting Started
+
+This extension is deactivated by default. Press `Ctrl+Alt+m` to activate before using any other commands.
+
 ## Extension Settings
 
 This extension contributes the following settings:
@@ -25,14 +29,19 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 0.2.2
+
+- Changed default number of characters per page to 80.
+- Trying to fix [#1](https://github.com/KCFindstr/thief-novel-vsc/issues/1).
+
 ### 0.2.1
 
-Minor bug fix.
+- Minor bug fixes.
 
 ### 0.2.0
 
-Add html unicode convert support (converts strings like `&#1234;` to the unicode character).
+- Add html unicode convert support (converts strings like `&#1234;` to the unicode character).
 
 ### 0.1.1
 
-Initial release.
+- Initial release.
