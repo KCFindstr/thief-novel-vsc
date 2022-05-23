@@ -7,7 +7,7 @@
   },
   "displayName": "Thief-Novel",
   "description": "Read novels in vscode status bar.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "engines": {
     "vscode": "^1.66.0"
   },
